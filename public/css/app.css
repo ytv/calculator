@@ -1,0 +1,85 @@
+body {
+    padding: 0;
+    background-color: #647279;
+}
+.error {
+    color: #fff;
+    font-size:17px;
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.box {
+    width: 300px;
+    border-radius: 150px / 20px;
+    padding: 8px;
+    box-shadow: inset 0px 0px 5px #222,
+                0px 10px 20px #222;
+    background-color: #ebe6dd;
+    position: absolute;
+    top: 200px;
+    /*margin-top: 200px;*/
+    left:50%;
+    transform: translateX(-50%);
+    overflow: auto;
+}
+.innerBox {
+    margin: 10px;
+    overflow: auto;
+    padding: 5px;
+}
+/*#label {
+    font-size: 16px;
+    color: #9F8787;
+}*/
+.screen{
+    border: 1px solid #ccc;
+    background-color: #D2D2B9;
+    box-shadow: inset 0px 0px 3px #222;
+    margin: 20px -8px 13px -8px;
+    border-radius: 5px;
+}
+#display{
+    vertical-align: center;
+    text-align: right;
+    position: relative;
+    top: 5px;
+    right: 5px;
+    font: 30px/32px Arial, Sans-Serif;
+    font-weight: bold;
+    color: #555;
+}
+.col-xs-3, .col-xs-4  {
+    padding:6px;
+}
+.col-xs-9 {
+    padding: 0;
+    margin: 0;
+}
+.btn {
+    width: 100%;
+    box-shadow: inset 0px 1px 2px #666,
+                0px 2px 4px #666;
+    border-radius: 10px;
+    font-size: 17px;
+    background-color: #444;
+    color: #eee;
+}
+.btn:hover, .btn:active, .btn:focus {
+    color: #eee;
+    outline: none !important;
+}
+#btn-CE, #btn-AC {
+    background-color: #c93a49;
+}
+#btn-plus {
+    float: right;
+    height: 88px;
+}
+footer {
+    font-size: 17px;
+    color: #eee;
+    position: absolute;
+    top: 600px;
+}
