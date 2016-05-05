@@ -1,85 +1,110 @@
+/* body */
+
 body {
-    padding: 0;
     background-color: #647279;
+    padding: 0;
 }
+
+/* Error divs */
+
 .error {
     color: #fff;
     font-size:17px;
     position: absolute;
-    top: 170px;
-    left: 50%;
+        left: 50%;
+        top: 170px;
     transform: translateX(-50%);
 }
+
+/* containers for calculator and its buttons */
+
 .box {
-    width: 300px;
+    background-color: #ebe6dd;
     border-radius: 150px / 20px;
-    padding: 8px;
     box-shadow: inset 0px 0px 5px #222,
                 0px 10px 20px #222;
-    background-color: #ebe6dd;
-    position: absolute;
-    top: 200px;
-    /*margin-top: 200px;*/
-    left:50%;
-    transform: translateX(-50%);
     overflow: auto;
+    padding: 8px;
+    position: absolute;
+        left: 50%;
+        top: 200px;
+    transform: translateX(-50%);
+    width: 300px;
 }
+
 .innerBox {
     margin: 10px;
     overflow: auto;
     padding: 5px;
 }
-/*#label {
-    font-size: 16px;
-    color: #9F8787;
-}*/
-.screen{
-    border: 1px solid #ccc;
+
+/* Screen and display for Calculator */
+
+.screen {
     background-color: #D2D2B9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-shadow: inset 0px 0px 3px #222;
     margin: 20px -8px 13px -8px;
-    border-radius: 5px;
 }
-#display{
-    vertical-align: center;
-    text-align: right;
-    position: relative;
-    top: 5px;
-    right: 5px;
+
+#display {
+    color: #555;
     font: 30px/32px Arial, Sans-Serif;
     font-weight: bold;
-    color: #555;
+    position: relative;
+        right: 5px;
+        top: 5px;
+    text-align: right;
+    vertical-align: center;
 }
-.col-xs-3, .col-xs-4  {
+
+/* grid for calculator buttons*/
+
+.col-xs-3,
+.col-xs-4  {
     padding:6px;
 }
+
 .col-xs-9 {
     padding: 0;
     margin: 0;
 }
+
+/* Buttons */
+
 .btn {
-    width: 100%;
+    color: #eee;
+    background-color: #444;
+    border-radius: 10px;
     box-shadow: inset 0px 1px 2px #666,
                 0px 2px 4px #666;
-    border-radius: 10px;
     font-size: 17px;
-    background-color: #444;
-    color: #eee;
+    width: 100%;
 }
-.btn:hover, .btn:active, .btn:focus {
+
+.btn:hover,
+.btn:active,
+.btn:focus {
     color: #eee;
     outline: none !important;
 }
-#btn-CE, #btn-AC {
+
+#btn-CE,
+#btn-AC {
     background-color: #c93a49;
 }
+
 #btn-plus {
     float: right;
     height: 88px;
 }
+
+/* Footer */
+
 footer {
-    font-size: 17px;
     color: #eee;
+    font-size: 17px;
     position: absolute;
-    top: 600px;
+        top: 600px;
 }

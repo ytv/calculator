@@ -15,82 +15,79 @@ var Calc = {
     _bindBtns: function() {
         // binds number, '.' and 'CE' buttons to update screen function
         for(var i = 0; i < this.numKeys.length; i++) {
-            $('#btn-' + Calc.numKeys[i]).on('click', function(numKey){
-                return function() {
-                    $('#btn-CE').html('CE');
-                    if(Calc.lastClick === 'op') {
-                        Calc._updateScreen(numKey, true);
-                        Calc.lastClick = '';
-                    } else {
-                        Calc._updateScreen(numKey, false);
-                    }
+            $('#btn-' + Calc.numKeys[i]).on('click', function(numKey) {
+              return function() {
+                $('#btn-CE').html('CE');
+                if(Calc.lastClick === 'op') {
+                    Calc._updateScreen(numKey, true);
+                    Calc.lastClick = '';
+                } else {
+                    Calc._updateScreen(numKey, false);
                 }
-            }(Calc.numKeys[i]));
+            }
+          }(Calc.numKeys[i]));
         }
         // binds operation buttons
         for(var i = 0; i < Calc.opKeys.length; i++) {
             // console.log('#btn-' + Calc.opKeys[i]);
             $('#btn-' + Calc.opKeys[i]).on('click', function(num) {
-                return function() {
-                    if(Calc.mem === '') {
-                        Calc._storeInMem();
-                        Calc.nextOp = $('#btn-' + Calc.opKeys[num]).val();
-                        Calc.lastClick = 'op';
-                    } else if (Calc.lastClick === 'op') {
-                        Calc.nextOp = $('#btn-' + Calc.opKeys[num]).val();
-                    } else {
-                        var ans = 0;
-                        switch(Calc.nextOp) {
-                            case 'plus':
-                                ans = Calc.mem + Number($('#display').text());
-                                break;
-                            case 'min':
-                                ans = Calc.mem - Number($('#display').text());
-                                break;
-                            case 'mul':
-                                ans = Calc.mem * Number($('#display').text());
-                                break;
-                            case 'div':
-                                ans = Calc.mem / Number($('#display').text());
-                                break;
-                        }
-
-                        Calc._updateScreen(ans.toString(), true);
-
-                        var nextOp = $('#btn-' + Calc.opKeys[num]).val();
-
-                        if(nextOp === 'eq') {
-                            Calc.mem = '';
-                            Calc.nextOp = 'eq';
-                        } else {
-                            Calc.mem = Number($('#display').text());
-                            Calc.nextOp = nextOp;
-                        }
-                        Calc.lastClick = 'op';
+              return function() {
+                if(Calc.mem === '') {
+                    Calc._storeInMem();
+                    Calc.nextOp = $('#btn-' + Calc.opKeys[num]).val();
+                    Calc.lastClick = 'op';
+                } else if (Calc.lastClick === 'op') {
+                    Calc.nextOp = $('#btn-' + Calc.opKeys[num]).val();
+                } else {
+                    var ans = 0;
+                    switch(Calc.nextOp) {
+                        case 'plus':
+                            ans = Calc.mem + Number($('#display').text());
+                            break;
+                        case 'min':
+                            ans = Calc.mem - Number($('#display').text());
+                            break;
+                        case 'mul':
+                            ans = Calc.mem * Number($('#display').text());
+                            break;
+                        case 'div':
+                            ans = Calc.mem / Number($('#display').text());
+                            break;
                     }
+                    Calc._updateScreen(ans.toString(), true);
+                    var nextOp = $('#btn-' + Calc.opKeys[num]).val();
+                    if(nextOp === 'eq') {
+                        Calc.mem = '';
+                        Calc.nextOp = 'eq';
+                    } else {
+                        Calc.mem = Number($('#display').text());
+                        Calc.nextOp = nextOp;
+                    }
+                    Calc.lastClick = 'op';
                 }
-            }(i));
+            }
+          }(i));
         }
         $('#btn-per').on('click', function() {
-            var display = Number($('#display').text())/100;
-            $('#display').html(display);
+          var display = Number($('#display').text())/100;
+          $('#display').html(display);
         });
         // AC clears the screen and resets the memory
         $('#btn-AC').on('click', function() {
-            $('.error').html('');
-            Calc.mem = '';
-            Calc.lastClick = '';
-            Calc.nextOp = 'eq';
-            Calc._updateScreen('0', true);
+          $('.error').html('');
+          Calc.mem = '';
+          Calc.lastClick = '';
+          Calc.nextOp = 'eq';
+          Calc._updateScreen('0', true);
         });
         // CE "backspaces" the display.
         $('#btn-CE').on('click', function() {
-            $('.error').html('');
-            var display = $('#display').text().slice(0, -1);
-            if (display === "")
-                $('#display').html('0');
-            else
-                $('#display').html(display);
+          $('.error').html('');
+          var display = $('#display').text().slice(0, -1);
+          if (display === "")
+              $('#display').html('0');
+          else
+              $('#display').html(display);
         });
     },
     _updateScreen: function(x, clearFirst = 'false') {
@@ -102,13 +99,11 @@ var Calc = {
                 $('#display').html('0.');
             else
                 $('#display').html(x);
-        }
         // errors if 14 digits are already displayed and more numbers already
         // attempting to be added
-        else if ($('#display').text().length >= 14) {
+        } else if ($('#display').text().length >= 14) {
             $('.error').html('Error: too many numbers');
-        }
-        else {
+        } else {
             if(x === 'dot')
                 $('#display').append('.');
             else
