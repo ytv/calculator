@@ -1,7 +1,7 @@
 /* body */
 
 body {
-    background-color: #647279;
+    background-color: #937173;
     padding: 0;
 }
 
@@ -12,7 +12,7 @@ body {
     font-size:17px;
     position: absolute;
         left: 50%;
-        top: 170px;
+        top: 5%;
     transform: translateX(-50%);
 }
 
@@ -27,7 +27,7 @@ body {
     padding: 8px;
     position: absolute;
         left: 50%;
-        top: 200px;
+        top: 15%;
     transform: translateX(-50%);
     width: 300px;
 }
@@ -102,9 +102,9 @@ body {
 
 /* Footer */
 
-footer {
+/*footer {
     color: #eee;
     font-size: 17px;
     position: absolute;
         top: 600px;
-}
+}*/
