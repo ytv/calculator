@@ -90,7 +90,7 @@ var Calc = {
               $('#display').html(display);
         });
     },
-    _updateScreen: function(x, clearFirst = 'false') {
+    _updateScreen: function(x, clearFirst) {
         // check length of number of the display or answer to be displayed
         x = this._checkLength(x);
         // clears display first if display is 0 or clearFirst is set to true
